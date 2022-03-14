@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="110" height="39" viewBox="0 0 110 39">
+  <defs>
+    <filter id="LOADING..." x="0" y="0" width="110" height="39" filterUnits="userSpaceOnUse">
+      <feOffset dy="5" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feFlood flood-color="#cac413"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#LOADING...)">
+    <text id="LOADING...-2" data-name="LOADING..." transform="translate(6 23)" fill="#f2e7fe" font-size="20" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">LOADING...</tspan></text>
+  </g>
+</svg>

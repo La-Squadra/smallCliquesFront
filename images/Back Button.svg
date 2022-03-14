@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="150" height="40" viewBox="0 0 150 40">
+  <g id="Back_Button" data-name="Back Button" transform="translate(-220 -573)">
+    <g id="Rectangle_7" data-name="Rectangle 7" transform="translate(220 573)" fill="#03dac5" stroke="#707070" stroke-linejoin="round" stroke-width="1">
+      <rect width="150" height="40" stroke="none"/>
+      <rect x="0.5" y="0.5" width="149" height="39" fill="none"/>
+    </g>
+    <text id="Back" transform="translate(295 601)" fill="rgba(0,0,0,0.74)" font-size="20" font-family="Nunito-Bold, Nunito" font-weight="700"><tspan x="-22.47" y="0">Back</tspan></text>
+  </g>
+</svg>
