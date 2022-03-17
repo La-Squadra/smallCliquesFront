@@ -1,3 +1,6 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:adobe_xd/blend_mask.dart';
 import 'package:adobe_xd/pinned.dart';
@@ -8,6 +11,17 @@ import './small_cliques_clique.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class SmallCliquesHomeScreen extends StatelessWidget {
+  String username = "";
+
+  void getUsername() async {
+    DocumentSnapshot snap = await FirebaseFirestore.instance
+        .collection('users')
+        .doc(FirebaseAuth.instance.currentUser!.uid)
+        .get();
+
+    username = (snap.data() as Map<String, dynamic>)['firstname']['lastname'];
+  }
+
   SmallCliquesHomeScreen({
     Key? key,
   }) : super(key: key);
@@ -125,7 +139,7 @@ class SmallCliquesHomeScreen extends StatelessWidget {
                   Pin(start: 0.0, end: 0.0),
                   Pin(size: 41.0, end: 0.0),
                   child: Text(
-                    'Kim Wetherington',
+                    username,
                     style: TextStyle(
                       fontFamily: 'Nunito',
                       fontSize: 30,
@@ -136,7 +150,7 @@ class SmallCliquesHomeScreen extends StatelessWidget {
                     textAlign: TextAlign.center,
                     softWrap: false,
                   ),
-                ),
+                )
               ],
             ),
           ),

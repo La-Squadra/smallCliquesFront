@@ -3,6 +3,7 @@ import 'dart:typed_data';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:smallcliques_v3/user.dart' as model;
 
 class AuthMethods {
   final FirebaseAuth _auth = FirebaseAuth.instance;
@@ -29,14 +30,17 @@ class AuthMethods {
         UserCredential cred = await _auth.createUserWithEmailAndPassword(
             email: email, password: password);
 
-        await _firestore.collection('users').doc(cred.user!.uid).set({
-          'username': username,
-          'firstname': firstName,
-          'lastname': lastName,
-          'uid': cred.user!.uid,
-          'email': email,
-          'password': password,
-        });
+        model.User user = model.User(
+            username: username,
+            firstName: firstName,
+            lastName: lastName,
+            email: email,
+            uid: cred.user!.uid);
+
+        await _firestore
+            .collection('users')
+            .doc(cred.user!.uid)
+            .set(user.toJson());
         res = 'success';
       }
     } catch (err) {
