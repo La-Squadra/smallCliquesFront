@@ -139,7 +139,7 @@ class SmallCliquesHomeScreen extends StatelessWidget {
                   Pin(start: 0.0, end: 0.0),
                   Pin(size: 41.0, end: 0.0),
                   child: Text(
-                    username,
+                    'Username',
                     style: TextStyle(
                       fontFamily: 'Nunito',
                       fontSize: 30,
